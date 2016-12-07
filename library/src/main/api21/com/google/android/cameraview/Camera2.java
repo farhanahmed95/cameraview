@@ -60,7 +60,7 @@ class Camera2 extends CameraViewImpl {
         @Override
         public void onOpened(@NonNull CameraDevice camera) {
             mCamera = camera;
-            mCallback.onCameraOpened();
+            mCallback.onCameraOpened(camera);
             startCaptureSession();
         }
 
