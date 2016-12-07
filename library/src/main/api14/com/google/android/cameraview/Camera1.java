@@ -253,6 +253,11 @@ class Camera1 extends CameraViewImpl {
         }
     }
 
+    @Override
+    public Camera getCamera() {
+        return mCamera;
+    }
+
     /**
      * This rewrites {@link #mCameraId} and {@link #mCameraInfo}.
      */
@@ -289,7 +294,7 @@ class Camera1 extends CameraViewImpl {
         }
         adjustCameraParameters();
         mCamera.setDisplayOrientation(calcCameraRotation(mDisplayOrientation));
-        mCallback.onCameraOpened(mCamera);
+        mCallback.onCameraOpened();
     }
 
     private AspectRatio chooseAspectRatio() {

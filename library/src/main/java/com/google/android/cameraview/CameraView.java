@@ -303,6 +303,11 @@ public class CameraView extends FrameLayout {
         return mImpl.getFacing();
     }
 
+
+    public <T> T getCamera(){
+        return mImpl.getCamera();
+    }
+
     /**
      * Gets all the aspect ratios supported by the current camera.
      */

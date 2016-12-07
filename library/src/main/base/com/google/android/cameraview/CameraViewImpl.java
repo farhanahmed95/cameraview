@@ -63,15 +63,15 @@ abstract class CameraViewImpl {
 
     abstract void setDisplayOrientation(int displayOrientation);
 
-    interface Callback<T> {
+    public abstract <T>  T getCamera();
 
-        void onCameraOpened(T camera);
+    interface Callback {
+
+        void onCameraOpened();
 
         void onCameraClosed();
 
         void onPictureTaken(byte[] data);
-
-
     }
 
 

@@ -60,7 +60,7 @@ class Camera2 extends CameraViewImpl {
         @Override
         public void onOpened(@NonNull CameraDevice camera) {
             mCamera = camera;
-            mCallback.onCameraOpened(camera);
+            mCallback.onCameraOpened();
             startCaptureSession();
         }
 
@@ -329,6 +329,11 @@ class Camera2 extends CameraViewImpl {
     void setDisplayOrientation(int displayOrientation) {
         mDisplayOrientation = displayOrientation;
         mPreview.setDisplayOrientation(mDisplayOrientation);
+    }
+
+    @Override
+    public CameraDevice getCamera() {
+        return mCamera;
     }
 
     /**
